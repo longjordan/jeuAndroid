@@ -13,14 +13,14 @@
         <RelativeLayout
             android:layout_width="0dip"
             android:layout_height="fill_parent"
-            android:layout_weight="0.05">
+            android:layout_weight="0.01">
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="0dip"
             android:layout_height="fill_parent"
-            android:layout_weight="0.9">
+            android:layout_weight="0.98">
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -55,7 +55,7 @@
         <RelativeLayout
             android:layout_width="0dip"
             android:layout_height="fill_parent"
-            android:layout_weight="0.05">
+            android:layout_weight="0.01">
 
         </RelativeLayout>
     </LinearLayout>
