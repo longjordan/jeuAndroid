@@ -6,31 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".Controller.QuestionActivity">
 
-    <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:id="@+id/layoutContainer" android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/affiche"
-            android:layout_width="wrap_content"
-            android:layout_height="380dp"
-            tools:srcCompat="@tools:sample/backgrounds/scenic[1]" />
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.05">
 
-        <EditText
-            android:id="@+id/reponse"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Reponse"
-            android:inputType="textPersonName" />
+        </RelativeLayout>
 
-        <Button
-            android:id="@+id/validation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Valider" />
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.9">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <ImageView
+                    android:id="@+id/affiche"
+                    android:layout_width="wrap_content"
+                    android:layout_height="340dp"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic[1]" />
+
+                <EditText
+                    android:id="@+id/reponse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Reponse"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/validation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Valider" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.05">
+
+        </RelativeLayout>
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

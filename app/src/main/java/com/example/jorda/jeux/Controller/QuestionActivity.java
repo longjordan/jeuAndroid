@@ -48,7 +48,7 @@ public class QuestionActivity extends AppCompatActivity {
         validation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(reponse.getText().toString().equals(questionActuelle.getReponse())){
+                if(reponse.getText().toString().substring(0,1).toUpperCase().equals(questionActuelle.getReponse().substring(0,1).toUpperCase())){
                     /*Intent menu = new Intent(QuestionActivity.this, QuestionActivity.class);
                     menu.putExtra("categorie", categorieActuelle);
                     startActivity(menu);
