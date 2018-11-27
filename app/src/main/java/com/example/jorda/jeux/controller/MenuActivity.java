@@ -1,4 +1,4 @@
-package com.example.jorda.jeux.Controller;
+package com.example.jorda.jeux.controller;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,9 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.jorda.jeux.model.EtatJeu;
 import com.example.jorda.jeux.R;
-
-import static com.example.jorda.jeux.Model.Categories.*;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -20,6 +19,7 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EtatJeu etat = EtatJeu.getInstance();
         setContentView(R.layout.activity_menu);
 
         cat1 = (Button) findViewById(R.id.cat1);
@@ -30,8 +30,8 @@ public class MenuActivity extends AppCompatActivity {
         cat1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent menu = new Intent(MenuActivity.this, QuestionActivity.class);
-                menu.putExtra("categorie", cat1.getText().toString());
+                Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
+                menu.putExtra("categorie", cat1.getId());
                 startActivity(menu);
             }
         });
@@ -39,8 +39,8 @@ public class MenuActivity extends AppCompatActivity {
         cat2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent menu = new Intent(MenuActivity.this, QuestionActivity.class);
-                menu.putExtra("categorie", cat2.getText().toString());
+                Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
+                menu.putExtra("categorie", cat2.getId());
                 startActivity(menu);
             }
         });
@@ -48,8 +48,8 @@ public class MenuActivity extends AppCompatActivity {
         cat3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent menu = new Intent(MenuActivity.this, QuestionActivity.class);
-                menu.putExtra("categorie", cat3.getText().toString());
+                Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
+                menu.putExtra("categorie", cat3.getId());
                 startActivity(menu);
             }
         });
@@ -57,8 +57,8 @@ public class MenuActivity extends AppCompatActivity {
         cat4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent menu = new Intent(MenuActivity.this, QuestionActivity.class);
-                menu.putExtra("categorie", cat4.getText().toString());
+                Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
+                menu.putExtra("categorie", cat4.getId());
                 startActivity(menu);
             }
         });

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller.QuestionActivity">
+    tools:context=".controller.QuestionActivity">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent" android:layout_height="fill_parent"
@@ -44,11 +44,27 @@
                     android:hint="Reponse"
                     android:inputType="textPersonName" />
 
-                <Button
-                    android:id="@+id/validation"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Valider" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/validation"
+                        android:layout_width="254dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/holo_green_light"
+                        android:text="Valider" />
+
+                    <Button
+                        android:id="@+id/passer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/holo_red_light"
+                        android:text="Passer" />
+                </LinearLayout>
+
             </LinearLayout>
         </RelativeLayout>
 

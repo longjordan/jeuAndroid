@@ -1,4 +1,4 @@
-package com.example.jorda.jeux.Controller;
+package com.example.jorda.jeux.controller;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.jorda.jeux.R;
+import com.example.jorda.jeux.model.EtatJeu;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        EtatJeu.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

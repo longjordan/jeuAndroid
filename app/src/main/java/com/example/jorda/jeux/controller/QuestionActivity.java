@@ -1,8 +1,6 @@
-package com.example.jorda.jeux.Controller;
+package com.example.jorda.jeux.controller;
 
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,38 +9,50 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.jorda.jeux.Model.Categories;
-import com.example.jorda.jeux.Model.Question;
-import com.example.jorda.jeux.Model.QuestionBank;
+import com.example.jorda.jeux.model.Categories;
+import com.example.jorda.jeux.model.EtatJeu;
+import com.example.jorda.jeux.model.Question;
+import com.example.jorda.jeux.model.QuestionBank;
 import com.example.jorda.jeux.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.jorda.jeux.Model.Categories.CATEGORIE1;
-
 public class QuestionActivity extends AppCompatActivity {
 
-    private QuestionBank questions;
+
     private ImageView affiche;
     private Question questionActuelle;
     private Button validation;
+    private Button passer;
     private EditText reponse;
+    private int categorieActuelle;
+    private int numQuestionActuelle;
+    private QuestionBank questions;
 
-    private String categorieActuelle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
-        generateQuestions();
-        questionActuelle = questions.getQuestion();
+        categorieActuelle = getIntent().getIntExtra("categorie", 0);
+        numQuestionActuelle = getIntent().getIntExtra("numQuestion",0);
+
+        if(categorieActuelle == R.id.cat1) {
+            questions = QuestionBank.getinstance(null, Categories.CATEGORIE1, null);
+        } else if (categorieActuelle == R.id.cat2) {
+            questions = QuestionBank.getinstance(null, Categories.CATEGORIE2, null);
+        }
+        /* A compléter avec les autres catégories*/
+
+        questionActuelle = questions.getQuestions().get(numQuestionActuelle-1);
         affiche = findViewById(R.id.affiche);
         Drawable d = getResources().getDrawable(questionActuelle.getImage());
         affiche.setImageDrawable(d);
 
         validation = (Button) findViewById(R.id.validation);
+        passer = (Button) findViewById(R.id.passer);
         reponse = (EditText) findViewById(R.id.reponse);
 
         validation.setOnClickListener(new View.OnClickListener() {
@@ -53,49 +63,23 @@ public class QuestionActivity extends AppCompatActivity {
                     menu.putExtra("categorie", categorieActuelle);
                     startActivity(menu);
                     finish();*/
-                    questionActuelle = questions.getQuestion();
-                    if(questionActuelle == null) {
-                        // Activation activité succès
-                        finish();
-                    } else {
-                        affiche = findViewById(R.id.affiche);
-                        Drawable d = getResources().getDrawable(questionActuelle.getImage());
-                        affiche.setImageDrawable(d);
-                        reponse.setText("");
-                    }
+                    questions.ajoutPoint(questionActuelle);
+
+                    finish();
                 }else{
                     Toast.makeText(QuestionActivity.this, "Mauvaise réponse", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-    }
+        passer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        }
+        );
 
-    private void generateQuestions() {
-        categorieActuelle = getIntent().getStringExtra("categorie").toLowerCase();
-
-        Question question1 = new Question(R.drawable.mep3, "Death note");
-        Question question2 = new Question(R.drawable.mep14, "Olive et Tom");
-
-        Question question3 = new Question(R.drawable.mep5, "Interstellar");
-        Question question4 = new Question(R.drawable.mep48, "Dragons");
-
-        List<Question> questCat1 = new ArrayList<>();
-        List<Question> questCat2 = new ArrayList<>();
-        questCat1.add(question1);
-        questCat1.add(question2);
-        questCat2.add(question3);
-        questCat2.add(question4);
-
-        if(categorieActuelle.equals("categorie1")) {
-            questions = new QuestionBank(questCat1, Categories.CATEGORIE1);
-        } else if (categorieActuelle.equals("categorie2")) {
-            questions = new QuestionBank(questCat2, Categories.CATEGORIE2);
-        }/* else if (categorie.equals("categorie3")) {
-            questions = new QuestionBank(questCat3, Categories.CATEGORIE3);
-        } else if (categorie.equals("categorie4"))) {
-            questions = new QuestionBank(questCat4, Categories.CATEGORIE4);
-        }*/
     }
 
     @Override

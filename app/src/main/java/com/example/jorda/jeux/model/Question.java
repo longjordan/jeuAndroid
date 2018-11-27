@@ -1,8 +1,4 @@
-package com.example.jorda.jeux.Model;
-
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
+package com.example.jorda.jeux.model;
 
 public class Question {
 

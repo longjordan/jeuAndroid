@@ -1,4 +1,4 @@
-package com.example.jorda.jeux.Model;
+package com.example.jorda.jeux.model;
 
 public enum Categories {
 
