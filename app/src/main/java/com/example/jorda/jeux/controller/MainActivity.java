@@ -12,20 +12,31 @@ import com.example.jorda.jeux.model.EtatJeu;
 public class MainActivity extends AppCompatActivity {
 
     private Button mPlayButton;
+    private Button quitter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        EtatJeu.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mPlayButton = (Button) findViewById(R.id.jouer);
+        EtatJeu etat = EtatJeu.getInstance();
+
+        //set des bouttons.
+        mPlayButton = findViewById(R.id.jouer);
+        quitter = findViewById(R.id.quitter);
 
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent menu = new Intent(MainActivity.this, MenuActivity.class);
                 startActivity(menu);
+            }
+        });
+
+        quitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

@@ -22,10 +22,10 @@ public class MenuActivity extends AppCompatActivity {
         EtatJeu etat = EtatJeu.getInstance();
         setContentView(R.layout.activity_menu);
 
-        cat1 = (Button) findViewById(R.id.cat1);
-        cat2 = (Button) findViewById(R.id.cat2);
-        cat3 = (Button) findViewById(R.id.cat3);
-        cat4 = (Button) findViewById(R.id.cat4);
+        cat1 = findViewById(R.id.cat1);
+        cat2 = findViewById(R.id.cat2);
+        cat3 = findViewById(R.id.cat3);
+        cat4 = findViewById(R.id.cat4);
 
         cat1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +45,8 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        cat3.setOnClickListener(new View.OnClickListener() {
+        //Pas encore utilisé
+        /*cat3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
@@ -61,7 +62,7 @@ public class MenuActivity extends AppCompatActivity {
                 menu.putExtra("categorie", cat4.getId());
                 startActivity(menu);
             }
-        });
+        });*/
     }
 
     @Override

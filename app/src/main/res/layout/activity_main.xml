@@ -35,12 +35,14 @@
                     android:text="Jouer"></Button>
 
                 <Button
+                    android:id="@+id/option"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="50dp"
                     android:text="Option"></Button>
 
                 <Button
+                    android:id="@+id/quitter"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="Quitter"></Button>

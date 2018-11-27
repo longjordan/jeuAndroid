@@ -47,18 +47,20 @@ public class QuestionActivity extends AppCompatActivity {
         /* A compléter avec les autres catégories*/
 
         questionActuelle = questions.getQuestions().get(numQuestionActuelle-1);
-        affiche = findViewById(R.id.affiche);
         Drawable d = getResources().getDrawable(questionActuelle.getImage());
+
+        affiche = findViewById(R.id.affiche);
         affiche.setImageDrawable(d);
 
-        validation = (Button) findViewById(R.id.validation);
-        passer = (Button) findViewById(R.id.passer);
-        reponse = (EditText) findViewById(R.id.reponse);
+        validation = findViewById(R.id.validation);
+        passer = findViewById(R.id.passer);
+        reponse = findViewById(R.id.reponse);
 
         validation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(reponse.getText().toString().substring(0,1).toUpperCase().equals(questionActuelle.getReponse().substring(0,1).toUpperCase())){
+                    //PDS pourquoi il y a un substring ? 
                     /*Intent menu = new Intent(QuestionActivity.this, QuestionActivity.class);
                     menu.putExtra("categorie", categorieActuelle);
                     startActivity(menu);

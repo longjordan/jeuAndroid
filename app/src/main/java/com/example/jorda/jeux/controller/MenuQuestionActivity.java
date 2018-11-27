@@ -37,19 +37,36 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
 
         boutons = new ArrayList<>();
 
-        q1 = (Button) findViewById(R.id.q1);
-        q2 = (Button) findViewById(R.id.q2);
-        q3 = (Button) findViewById(R.id.q3);
-        q4 = (Button) findViewById(R.id.q4);
+        q1 = findViewById(R.id.q1);
+        q2 = findViewById(R.id.q2);
+        q3 = findViewById(R.id.q3);
+        q4 = findViewById(R.id.q4);
 
         boutons.add(q1);
         boutons.add(q2);
-        boutons.add(q3);
-        boutons.add(q4);
+        /*boutons.add(q3);
+        boutons.add(q4);*/
 
+        // A quoi sert cette méthode ?
         update(null,null);
 
-        q1.setOnClickListener(new View.OnClickListener() {
+        //PDS on boucle sur tout les boutons de la liste et on les set avec la bonne question.
+
+        for (int i=0; i<boutons.size();i++){
+            //j est une variable recrée à chaque tour de boucle car il nous faut une variable final
+            final int j=i;
+            boutons.get(0).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent menu = new Intent(MenuQuestionActivity.this, QuestionActivity.class);
+                    menu.putExtra("categorie", categorieActuelle);
+                    menu.putExtra("numQuestion", j);
+                    startActivity(menu);
+                }
+            });
+        }
+
+        /*q1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent menu = new Intent(MenuQuestionActivity.this, QuestionActivity.class);
@@ -67,9 +84,9 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
                 menu.putExtra("numQuestion", 2);
                 startActivity(menu);
             }
-        });
+        });*/
 
-        q3.setOnClickListener(new View.OnClickListener() {
+        /*q3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent menu = new Intent(MenuQuestionActivity.this, QuestionActivity.class);
@@ -87,11 +104,15 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
                 menu.putExtra("numQuestion", 4);
                 startActivity(menu);
             }
-        });
+        });*/
     }
 
+    //Methode qui génére suivant la catégorie les questions pour les images choisi.
     private void generateQuestions() {
         categorieActuelle = getIntent().getIntExtra("categorie",0);
+
+        //PDS voir si on peut pas faire une méthode avec une liste et pour chaque tour de boucle on met l'élément suivant
+        //PDS faire que la réponse soit une liste de proposition et qu'on regarde si elle est dedans.
 
         Question question1 = new Question(R.drawable.mep3, "Death note");
         Question question2 = new Question(R.drawable.mep14, "Olive et Tom");
@@ -110,7 +131,9 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
             questions = QuestionBank.getinstance(questCat1, Categories.CATEGORIE1, this);
         } else if (categorieActuelle == R.id.cat2) {
             questions = QuestionBank.getinstance(questCat2, Categories.CATEGORIE2, this);
-        }/* else if (categorie.equals("cat3")) {
+        }
+        //Pas encore utilisé
+        /* else if (categorie.equals("cat3")) {
             questions = new QuestionBank(questCat3, Categories.CATEGORIE3);
         } else if (categorie.equals("categorie4"))) {
             questions = new QuestionBank(questCat4, Categories.CATEGORIE4);
