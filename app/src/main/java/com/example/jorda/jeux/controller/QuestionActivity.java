@@ -40,9 +40,9 @@ public class QuestionActivity extends AppCompatActivity {
         numQuestionActuelle = getIntent().getIntExtra("numQuestion",0);
 
         if(categorieActuelle == R.id.cat1) {
-            questions = QuestionBank.getinstance(null, Categories.CATEGORIE1, null);
+            questions = QuestionBank.getinstance(null, Categories.CATEGORIE1);
         } else if (categorieActuelle == R.id.cat2) {
-            questions = QuestionBank.getinstance(null, Categories.CATEGORIE2, null);
+            questions = QuestionBank.getinstance(null, Categories.CATEGORIE2);
         }
         /* A compléter avec les autres catégories*/
 

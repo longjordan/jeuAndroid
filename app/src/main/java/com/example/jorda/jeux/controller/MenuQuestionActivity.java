@@ -33,6 +33,7 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_question);
 
+        QuestionBank.setObservers(this);
         generateQuestions();
 
         boutons = new ArrayList<>();
@@ -55,12 +56,12 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         for (int i=0; i<boutons.size();i++){
             //j est une variable recrée à chaque tour de boucle car il nous faut une variable final
             final int j=i;
-            boutons.get(0).setOnClickListener(new View.OnClickListener() {
+            boutons.get(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent menu = new Intent(MenuQuestionActivity.this, QuestionActivity.class);
                     menu.putExtra("categorie", categorieActuelle);
-                    menu.putExtra("numQuestion", j);
+                    menu.putExtra("numQuestion", j+1);
                     startActivity(menu);
                 }
             });
@@ -128,9 +129,9 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         questCat2.add(question4);
 
         if(categorieActuelle == R.id.cat1) {
-            questions = QuestionBank.getinstance(questCat1, Categories.CATEGORIE1, this);
+            questions = QuestionBank.getinstance(questCat1, Categories.CATEGORIE1);
         } else if (categorieActuelle == R.id.cat2) {
-            questions = QuestionBank.getinstance(questCat2, Categories.CATEGORIE2, this);
+            questions = QuestionBank.getinstance(questCat2, Categories.CATEGORIE2);
         }
         //Pas encore utilisé
         /* else if (categorie.equals("cat3")) {
