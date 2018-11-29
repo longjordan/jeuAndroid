@@ -49,7 +49,6 @@ public class QuestionActivity extends AppCompatActivity {
         } else if (categorieActuelle == R.id.cat5) {
             questions = QuestionBank.getinstance(null, Categories.CATEGORIE5);
         }
-        /* A compléter avec les autres catégories*/
 
         questionActuelle = questions.getQuestions().get(numQuestionActuelle-1);
         Drawable d = getResources().getDrawable(questionActuelle.getImage());

@@ -41,6 +41,7 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
     private ImageButton q8;
     private List<ImageButton> boutons;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -197,6 +198,7 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         List<Question> questCat4 = new ArrayList<>();
         List<Question> questCat5 = new ArrayList<>();
 
+        //On met les bonnes questions dans les catégories
         Collections.addAll(questCat1, question1, question2, question3, question4, question5, question6, question7, question8);
         Collections.addAll(questCat2, question9, question10, question11, question12, question13, question14, question15, question16);
         Collections.addAll(questCat3, question17, question18, question19, question20, question21, question22, question23, question24);

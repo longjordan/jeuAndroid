@@ -26,7 +26,6 @@ public class MenuActivity extends AppCompatActivity implements Observer {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EtatJeu etat = EtatJeu.getInstance();
         setContentView(R.layout.activity_menu);
 
         QuestionBank.setObservers(this);
@@ -101,25 +100,6 @@ public class MenuActivity extends AppCompatActivity implements Observer {
                 }
             }
         });
-
-        //Pas encore utilisé
-        /*cat3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
-                menu.putExtra("categorie", cat3.getId());
-                startActivity(menu);
-            }
-        });
-
-        cat4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
-                menu.putExtra("categorie", cat4.getId());
-                startActivity(menu);
-            }
-        });*/
     }
 
     @Override

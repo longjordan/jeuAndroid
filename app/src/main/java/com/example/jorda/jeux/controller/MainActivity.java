@@ -19,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EtatJeu etat = EtatJeu.getInstance();
-
         //set des bouttons.
         mPlayButton = findViewById(R.id.jouer);
         quitter = findViewById(R.id.quitter);
