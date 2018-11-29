@@ -6,51 +6,139 @@
     android:layout_height="match_parent"
     tools:context=".controller.MenuQuestionActivity">
 
-    <LinearLayout
-        android:layout_width="344dp"
-        android:layout_height="495dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+         >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/q1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Affiche1" />
+            <LinearLayout
+                android:id="@+id/layoutContainer"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/q2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Affiche2" />
+                <RelativeLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.01">
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.98">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+
+                        android:orientation="vertical"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="8dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/q1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp"
+                                android:layout_weight="1"
+                                android:text="Affiche1" />
+
+                            <Button
+                                android:id="@+id/q2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp"
+                                android:layout_weight="1"
+                                android:text="Affiche2" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/q3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp"
+                                android:layout_weight="1"
+                                android:text="Affiche3" />
+
+                            <Button
+                                android:id="@+id/q4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp"
+                                android:layout_weight="1"
+                                android:text="Affiche4" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/q5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp"
+                                android:layout_weight="1"
+                                android:text="Affiche5" />
+
+                            <Button
+                                android:id="@+id/q6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp"
+                                android:layout_weight="1"
+                                android:text="Affiche6" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/q7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp"
+                                android:layout_weight="1"
+                                android:text="Affiche7" />
+
+                            <Button
+                                android:id="@+id/q8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp"
+                                android:layout_weight="1"
+                                android:text="Affiche8" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.01">
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+    </ScrollView>
 
-            <Button
-                android:id="@+id/q3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
 
-            <Button
-                android:id="@+id/q4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-        </LinearLayout>
-    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

@@ -43,6 +43,12 @@ public class QuestionActivity extends AppCompatActivity {
             questions = QuestionBank.getinstance(null, Categories.CATEGORIE1);
         } else if (categorieActuelle == R.id.cat2) {
             questions = QuestionBank.getinstance(null, Categories.CATEGORIE2);
+        } else if (categorieActuelle == R.id.cat3) {
+            questions = QuestionBank.getinstance(null, Categories.CATEGORIE3);
+        } else if (categorieActuelle == R.id.cat4) {
+            questions = QuestionBank.getinstance(null, Categories.CATEGORIE4);
+        } else if (categorieActuelle == R.id.cat5) {
+            questions = QuestionBank.getinstance(null, Categories.CATEGORIE5);
         }
         /* A compléter avec les autres catégories*/
 

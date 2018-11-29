@@ -15,22 +15,15 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <Button
+                    android:id="@+id/cat1"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="150dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/cat1"
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:background="@android:color/holo_blue_light"
-                        android:lineSpacingExtra="12sp"
-                        android:text="Catégorie1"
-                        android:textSize="24sp" />
-                </LinearLayout>
+                    android:background="@android:color/holo_blue_light"
+                    android:lineSpacingExtra="12sp"
+                    android:text="#1 \n 8 affiches"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/cat2"

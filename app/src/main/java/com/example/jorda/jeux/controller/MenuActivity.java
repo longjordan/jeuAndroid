@@ -20,6 +20,7 @@ public class MenuActivity extends AppCompatActivity implements Observer {
     private Button cat2;
     private Button cat3;
     private Button cat4;
+    private Button cat5;
     private int scoreTotal = 0;
 
     @Override
@@ -34,6 +35,7 @@ public class MenuActivity extends AppCompatActivity implements Observer {
         cat2 = findViewById(R.id.cat2);
         cat3 = findViewById(R.id.cat3);
         cat4 = findViewById(R.id.cat4);
+        cat5 = findViewById(R.id.cat5);
 
         cat1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +52,48 @@ public class MenuActivity extends AppCompatActivity implements Observer {
                 if(scoreTotal >= 4) {
                     Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
                     menu.putExtra("categorie", cat2.getId());
+                    startActivity(menu);
+                }else{
+                    int reste = 4-scoreTotal;
+                    Toast.makeText(MenuActivity.this, "Il reste "+reste+" affiche(s) à trouver.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        cat3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(scoreTotal >= 0) {
+                    Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
+                    menu.putExtra("categorie", cat3.getId());
+                    startActivity(menu);
+                }else{
+                    int reste = 4-scoreTotal;
+                    Toast.makeText(MenuActivity.this, "Il reste "+reste+" affiche(s) à trouver.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        cat4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(scoreTotal >= 0) {
+                    Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
+                    menu.putExtra("categorie", cat4.getId());
+                    startActivity(menu);
+                }else{
+                    int reste = 4-scoreTotal;
+                    Toast.makeText(MenuActivity.this, "Il reste "+reste+" affiche(s) à trouver.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        cat5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(scoreTotal >= 0) {
+                    Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
+                    menu.putExtra("categorie", cat5.getId());
                     startActivity(menu);
                 }else{
                     int reste = 4-scoreTotal;
