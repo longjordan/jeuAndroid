@@ -1,12 +1,20 @@
 package com.example.jorda.jeux.controller;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ScaleDrawable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.example.jorda.jeux.R;
 import com.example.jorda.jeux.model.Categories;
@@ -23,15 +31,15 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
 
     private QuestionBank questions;
     private int categorieActuelle;
-    private Button q1;
-    private Button q2;
-    private Button q3;
-    private Button q4;
-    private Button q5;
-    private Button q6;
-    private Button q7;
-    private Button q8;
-    private List<Button> boutons;
+    private ImageButton q1;
+    private ImageButton q2;
+    private ImageButton q3;
+    private ImageButton q4;
+    private ImageButton q5;
+    private ImageButton q6;
+    private ImageButton q7;
+    private ImageButton q8;
+    private List<ImageButton> boutons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +86,16 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
                     startActivity(menu);
                 }
             });
+        }
+
+        for(int i = 0; i < questions.getQuestions().size(); i++){
+            ImageButton b = boutons.get(i);
+            Drawable affiche = getResources().getDrawable(questions.getQuestions().get(i).getImage());
+
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(),questions.getQuestions().get(i).getImage());
+            bitmap = Bitmap.createBitmap(bitmap,200,300,500,500);
+            b.setImageBitmap(bitmap);
+            b.setScaleType(ImageView.ScaleType.FIT_CENTER);
         }
 
         /*q1.setOnClickListener(new View.OnClickListener() {
@@ -133,7 +151,7 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         Question question3 = new Question(R.drawable.mep5, "Interstellar");
         Question question4 = new Question(R.drawable.mep, "Insaisissable");
         Question question5 = new Question(R.drawable.mep25, "Harry Potter");
-        Question question6 = new Question(R.drawable.mep31, "Alien");
+        Question question6 = new Question(R.drawable.mep33, "Alien");
         Question question7 = new Question(R.drawable.mep21, "Le seigneur des anneaux");
         Question question8 = new Question(R.drawable.mep23, "Le fabuleux destin d'Amélie Poulain");
 
@@ -166,7 +184,7 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
 
         Question question33 = new Question(R.drawable.mep58, "Dr House");
         Question question34 = new Question(R.drawable.mep53, "Le roi lion");
-        Question question35 = new Question(R.drawable.mep7, "Spirit");
+        Question question35 = new Question(R.drawable.mep54, "Spirit");
         Question question36 = new Question(R.drawable.mep39, "Pirate des caraibes");
         Question question37 = new Question(R.drawable.mep20, "Matrix");
         Question question38 = new Question(R.drawable.mep27, "Je suis une légende");
@@ -183,7 +201,7 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         Collections.addAll(questCat2, question9, question10, question11, question12, question13, question14, question15, question16);
         Collections.addAll(questCat3, question17, question18, question19, question20, question21, question22, question23, question24);
         Collections.addAll(questCat4, question25, question26, question27, question28, question29, question30, question31, question32);
-        Collections.addAll(questCat5, question25, question26, question27, question28, question29, question30, question31, question32);
+        Collections.addAll(questCat5, question33, question34, question35, question36, question37, question38, question39, question40);
 
 
         if(categorieActuelle == R.id.cat1) {
@@ -197,20 +215,15 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         } else if (categorieActuelle == R.id.cat5) {
             questions = QuestionBank.getinstance(questCat5, Categories.CATEGORIE5);
         }
-        //Pas encore utilisé
-        /* else if (categorie.equals("cat3")) {
-            questions = new QuestionBank(questCat3, Categories.CATEGORIE3);
-        } else if (categorie.equals("categorie4"))) {
-            questions = new QuestionBank(questCat4, Categories.CATEGORIE4);
-        }*/
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void update(Observable o, Object arg) {
         for(int i = 0; i < questions.getQuestions().size(); i++){
             if(questions.getQuestionScore(questions.getQuestions().get(i)) == 1){
-                Button b = boutons.get(i);
-                b.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
+                ImageButton b = boutons.get(i);
+                b.getBackground().setColorFilter(Color.rgb(76,175,80), PorterDuff.Mode.MULTIPLY);
             }
         }
     }

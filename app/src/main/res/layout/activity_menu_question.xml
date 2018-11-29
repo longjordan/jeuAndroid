@@ -48,19 +48,22 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <Button
+                            <ImageButton
                                 android:id="@+id/q1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                android:text="Affiche1" />
+                                android:scaleType="fitCenter"
+                                tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
-                            <Button
+                            <ImageButton
                                 android:id="@+id/q2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                android:text="Affiche2" />
+                                android:scaleType="fitCenter"
+                                tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -68,19 +71,21 @@
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
 
-                            <Button
+                            <ImageButton
                                 android:id="@+id/q3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                android:text="Affiche3" />
+                                android:scaleType="fitCenter"
+                                tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
-                            <Button
+                            <ImageButton
                                 android:id="@+id/q4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                android:text="Affiche4" />
+                                android:scaleType="fitCenter"
+                                tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -88,19 +93,21 @@
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
 
-                            <Button
+                            <ImageButton
                                 android:id="@+id/q5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                android:text="Affiche5" />
+                                android:scaleType="fitCenter"
+                                tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
-                            <Button
+                            <ImageButton
                                 android:id="@+id/q6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                android:text="Affiche6" />
+                                android:scaleType="fitCenter"
+                                tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -108,19 +115,21 @@
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
 
-                            <Button
+                            <ImageButton
                                 android:id="@+id/q7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                android:text="Affiche7" />
+                                android:scaleType="fitCenter"
+                                tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
-                            <Button
+                            <ImageButton
                                 android:id="@+id/q8"
                                 android:layout_width="wrap_content"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                android:text="Affiche8" />
+                                android:scaleType="fitCenter"
+                                tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
                         </LinearLayout>
 
                     </LinearLayout>

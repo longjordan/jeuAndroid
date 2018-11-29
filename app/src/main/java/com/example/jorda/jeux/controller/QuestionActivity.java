@@ -24,7 +24,6 @@ public class QuestionActivity extends AppCompatActivity {
     private ImageView affiche;
     private Question questionActuelle;
     private Button validation;
-    private Button passer;
     private EditText reponse;
     private int categorieActuelle;
     private int numQuestionActuelle;
@@ -59,35 +58,19 @@ public class QuestionActivity extends AppCompatActivity {
         affiche.setImageDrawable(d);
 
         validation = findViewById(R.id.validation);
-        passer = findViewById(R.id.passer);
         reponse = findViewById(R.id.reponse);
 
         validation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(reponse.getText().toString().substring(0,1).toUpperCase().equals(questionActuelle.getReponse().substring(0,1).toUpperCase())){
-                    //PDS pourquoi il y a un substring ? 
-                    /*Intent menu = new Intent(QuestionActivity.this, QuestionActivity.class);
-                    menu.putExtra("categorie", categorieActuelle);
-                    startActivity(menu);
-                    finish();*/
+                if(reponse.getText().toString().toUpperCase().equals(questionActuelle.getReponse().toUpperCase())){
                     questions.ajoutPoint(questionActuelle);
-
                     finish();
                 }else{
                     Toast.makeText(QuestionActivity.this, "Mauvaise réponse", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-        passer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        }
-        );
-
     }
 
     @Override
