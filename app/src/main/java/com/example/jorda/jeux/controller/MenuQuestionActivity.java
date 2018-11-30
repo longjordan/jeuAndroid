@@ -94,7 +94,10 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
             Drawable affiche = getResources().getDrawable(questions.getQuestions().get(i).getImage());
 
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(),questions.getQuestions().get(i).getImage());
-            bitmap = Bitmap.createBitmap(bitmap,200,300,500,500);
+            //pour faire l'image en petit on fait un ratio entre hauteur et largeur qui est de 0.707 (la hauteur est 70% plus grande que la largeur)
+            int hauteur = 650;
+            bitmap = Bitmap.createScaledBitmap(bitmap,(int)(hauteur*0.707),hauteur,true);
+
             b.setImageBitmap(bitmap);
             b.setScaleType(ImageView.ScaleType.FIT_CENTER);
         }

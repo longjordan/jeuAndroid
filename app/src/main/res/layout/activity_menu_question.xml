@@ -33,7 +33,7 @@
                 <RelativeLayout
                     android:layout_width="0dip"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.98">
+                    android:layout_weight="0.60">
 
                     <LinearLayout
                         android:layout_width="fill_parent"
@@ -46,21 +46,26 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
                             android:orientation="horizontal">
 
                             <ImageButton
                                 android:id="@+id/q1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="150dp"
+                                android:layout_height="250dp"
+                                android:layout_margin="3dp"
                                 android:layout_weight="1"
+                                android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
                             <ImageButton
                                 android:id="@+id/q2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="150dp"
+                                android:layout_height="250dp"
+                                android:layout_margin="3dp"
                                 android:layout_weight="1"
+                                android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
@@ -74,16 +79,20 @@
                             <ImageButton
                                 android:id="@+id/q3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="150dp"
+                                android:layout_height="250dp"
+                                android:layout_margin="3dp"
                                 android:layout_weight="1"
+                                android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
                             <ImageButton
                                 android:id="@+id/q4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="150dp"
+                                android:layout_height="250dp"
+                                android:layout_margin="3dp"
                                 android:layout_weight="1"
+                                android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
                         </LinearLayout>
@@ -96,16 +105,20 @@
                             <ImageButton
                                 android:id="@+id/q5"
                                 android:layout_width="wrap_content"
-                                android:layout_height="150dp"
+                                android:layout_height="250dp"
+                                android:layout_margin="3dp"
                                 android:layout_weight="1"
+                                android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
                             <ImageButton
                                 android:id="@+id/q6"
                                 android:layout_width="wrap_content"
-                                android:layout_height="150dp"
+                                android:layout_height="250dp"
+                                android:layout_margin="3dp"
                                 android:layout_weight="1"
+                                android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
                         </LinearLayout>
@@ -118,16 +131,18 @@
                             <ImageButton
                                 android:id="@+id/q7"
                                 android:layout_width="wrap_content"
-                                android:layout_height="150dp"
+                                android:layout_height="250dp"
                                 android:layout_weight="1"
+                                android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
                             <ImageButton
                                 android:id="@+id/q8"
                                 android:layout_width="wrap_content"
-                                android:layout_height="150dp"
+                                android:layout_height="250dp"
                                 android:layout_weight="1"
+                                android:background="@android:color/transparent"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
                         </LinearLayout>
