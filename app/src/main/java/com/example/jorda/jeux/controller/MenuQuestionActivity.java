@@ -78,15 +78,13 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         for (int i=0; i<boutons.size();i++){
             //j est une variable recrée à chaque tour de boucle car il nous faut une variable final
             final int j=i;
-            boutons.get(i).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+            boutons.get(i).setOnClickListener((View v) -> {
                     Intent menu = new Intent(MenuQuestionActivity.this, QuestionActivity.class);
                     menu.putExtra("categorie", categorieActuelle);
                     menu.putExtra("numQuestion", j+1);
                     startActivity(menu);
                 }
-            });
+            );
         }
 
         for(int i = 0; i < questions.getQuestions().size(); i++){
@@ -148,15 +146,15 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         categorieActuelle = getIntent().getIntExtra("categorie",0);
 
         //PDS voir si on peut pas faire une méthode avec une liste et pour chaque tour de boucle on met l'élément suivant
-        //PDS faire que la réponse soit une liste de proposition et qu'on regarde si elle est dedans.
+        //PDS mis en place des regexs
 
         Question question1 = new Question(R.drawable.mep3, "Death note");
-        Question question2 = new Question(R.drawable.mep14, "Olive et Tom");
-        Question question3 = new Question(R.drawable.mep5, "Interstellar");
-        Question question4 = new Question(R.drawable.mep, "Insaisissable");
-        Question question5 = new Question(R.drawable.mep25, "Harry Potter");
-        Question question6 = new Question(R.drawable.mep33, "Alien");
-        Question question7 = new Question(R.drawable.mep21, "Le seigneur des anneaux");
+        Question question2 = new Question(R.drawable.mep14, ".*(OLIVE)( )*(ET)( )*(TOM).*");
+        Question question3 = new Question(R.drawable.mep5, ".*(INTERSTELLAR).*");
+        Question question4 = new Question(R.drawable.mep, ".*(INSAISISSABLE).*");
+        Question question5 = new Question(R.drawable.mep25, ".*(HARRY)( )*(POTTER).*");
+        Question question6 = new Question(R.drawable.mep33, ".*(ALIEN).*");
+        Question question7 = new Question(R.drawable.mep21, ".*(SEIGNEUR)( )*(DES)( )*(ANNEAUX).*");
         Question question8 = new Question(R.drawable.mep23, "Le fabuleux destin d'Amélie Poulain");
 
         Question question9 = new Question(R.drawable.mep48, "Dragons");

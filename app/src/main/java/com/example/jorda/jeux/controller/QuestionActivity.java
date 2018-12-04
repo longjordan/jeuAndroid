@@ -17,6 +17,7 @@ import com.example.jorda.jeux.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class QuestionActivity extends AppCompatActivity {
 
@@ -59,17 +60,22 @@ public class QuestionActivity extends AppCompatActivity {
         validation = findViewById(R.id.validation);
         reponse = findViewById(R.id.reponse);
 
-        validation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(reponse.getText().toString().toUpperCase().equals(questionActuelle.getReponse().toUpperCase())){
+        validation.setOnClickListener( (View v ) ->{
+                //PDS verification avec une regex plutot qu avec un seul choix possible
+                if(Pattern.matches(questionActuelle.getRegex(),reponse.getText().toString().toUpperCase())){
                     questions.ajoutPoint(questionActuelle);
                     finish();
-                }else{
+                }
+                else{
                     Toast.makeText(QuestionActivity.this, "Mauvaise réponse", Toast.LENGTH_SHORT).show();
                 }
+//                if(reponse.getText().toString().toUpperCase().equals(questionActuelle.getReponse().toUpperCase())){
+//                    questions.ajoutPoint(questionActuelle);
+//                    finish();
+//                }
+
             }
-        });
+        );
     }
 
     @Override
