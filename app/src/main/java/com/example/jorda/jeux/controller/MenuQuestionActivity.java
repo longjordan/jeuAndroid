@@ -148,50 +148,50 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         //PDS voir si on peut pas faire une méthode avec une liste et pour chaque tour de boucle on met l'élément suivant
         //PDS mis en place des regexs
 
-        Question question1 = new Question(R.drawable.mep3, "Death note");
+        Question question1 = new Question(R.drawable.mep3, ".*(DEATH)( )*(NOTE).*");
         Question question2 = new Question(R.drawable.mep14, ".*(OLIVE)( )*(ET)( )*(TOM).*");
         Question question3 = new Question(R.drawable.mep5, ".*(INTERSTELLAR).*");
         Question question4 = new Question(R.drawable.mep, ".*(INSAISISSABLE).*");
         Question question5 = new Question(R.drawable.mep25, ".*(HARRY)( )*(POTTER).*");
         Question question6 = new Question(R.drawable.mep33, ".*(ALIEN).*");
         Question question7 = new Question(R.drawable.mep21, ".*(SEIGNEUR)( )*(DES)( )*(ANNEAUX).*");
-        Question question8 = new Question(R.drawable.mep23, "Le fabuleux destin d'Amélie Poulain");
+        Question question8 = new Question(R.drawable.mep23, ".*(AMELIE)( )*(POULAIN).*");
 
-        Question question9 = new Question(R.drawable.mep48, "Dragons");
-        Question question10 = new Question(R.drawable.mep2, "Sherlock Holmes");
-        Question question11 = new Question(R.drawable.mep15, "Star Wars");
+        Question question9 = new Question(R.drawable.mep48, ".*(DRAGONS).*");
+        Question question10 = new Question(R.drawable.mep2, ".*(SHERLOCK)( )*(HOLMES).*");
+        Question question11 = new Question(R.drawable.mep15, ".*(STAR)( )*(WARS).*");
         Question question12 = new Question(R.drawable.mep16, "le cinquième élément");
-        Question question13 = new Question(R.drawable.mep17, "Titanic");
+        Question question13 = new Question(R.drawable.mep17, ".*(TITANIC).*");
         Question question14 = new Question(R.drawable.mep18, "X-men");
-        Question question15 = new Question(R.drawable.mep22, "Jurassic Park");
-        Question question16 = new Question(R.drawable.mep11, "Princesse Mononoké");
+        Question question15 = new Question(R.drawable.mep22, ".*(JURASSIC)( )*(PARK).*");
+        Question question16 = new Question(R.drawable.mep11, ".*(PRINCESSE)( )*(MONONOKE).*");
 
-        Question question17 = new Question(R.drawable.mep4, "Avatar");
-        Question question18 = new Question(R.drawable.mep13, "Le Hobbit");
-        Question question19 = new Question(R.drawable.mep19, "Indiana Jones");
+        Question question17 = new Question(R.drawable.mep4, ".*(AVATAR).*");
+        Question question18 = new Question(R.drawable.mep13, ".*(LE)( )*(HOBBIT).*");
+        Question question19 = new Question(R.drawable.mep19, ".*(INDIANA)( )*(JONES).*");
         Question question20 = new Question(R.drawable.mep24, "le silence des agneaux");
-        Question question21 = new Question(R.drawable.mep35, "Watchmen");
-        Question question22 = new Question(R.drawable.mep37, "Godzilla");
-        Question question23 = new Question(R.drawable.mep43, "Rox et rouky");
-        Question question24 = new Question(R.drawable.mep38, "Fight Club");
+        Question question21 = new Question(R.drawable.mep35, ".*(WATCHMEN).*");
+        Question question22 = new Question(R.drawable.mep37, ".*(GODZILLA).*");
+        Question question23 = new Question(R.drawable.mep43, ".*(ROX)( )*(ET)( )*(ROUKY).*");
+        Question question24 = new Question(R.drawable.mep38, ".*(FIGHT)( )*(CLUB).*");
 
-        Question question25 = new Question(R.drawable.mep8, "Zelda");
-        Question question26 = new Question(R.drawable.mep6, "Split");
+        Question question25 = new Question(R.drawable.mep8, ".*(ZELDA).*");
+        Question question26 = new Question(R.drawable.mep6, ".*(SPLIT).*");
         Question question27 = new Question(R.drawable.mep50, "Wall-E");
         Question question28 = new Question(R.drawable.mep51, "le monde de Ralph");
-        Question question29 = new Question(R.drawable.mep32, "le ligne verte");
+        Question question29 = new Question(R.drawable.mep32, ".*(LA)( )*(LIGNE)( )*(VERTE).*");
         Question question30 = new Question(R.drawable.mep56, "Pac-Man");
-        Question question31 = new Question(R.drawable.mep57, "Game of Thrones");
-        Question question32 = new Question(R.drawable.mep34, "Inception");
+        Question question31 = new Question(R.drawable.mep57, ".*(GAME)( )*(OF)( )*(THRONES).*");
+        Question question32 = new Question(R.drawable.mep34, ".*(INCEPTION).*");
 
-        Question question33 = new Question(R.drawable.mep58, "Dr House");
-        Question question34 = new Question(R.drawable.mep53, "Le roi lion");
-        Question question35 = new Question(R.drawable.mep54, "Spirit");
-        Question question36 = new Question(R.drawable.mep39, "Pirate des caraibes");
-        Question question37 = new Question(R.drawable.mep20, "Matrix");
-        Question question38 = new Question(R.drawable.mep27, "Je suis une légende");
-        Question question39 = new Question(R.drawable.mep30, "Scream");
-        Question question40 = new Question(R.drawable.mep10, "Pokémon");
+        Question question33 = new Question(R.drawable.mep58, ".*(DR)( )*(HOUSE).*");
+        Question question34 = new Question(R.drawable.mep53, ".*(ROI)( )*(LYON).*");
+        Question question35 = new Question(R.drawable.mep54, ".*(SPIRIT).*");
+        Question question36 = new Question(R.drawable.mep39, ".*(PIRATE)( )*(DES)( )*(CARAIBES).*");
+        Question question37 = new Question(R.drawable.mep20, ".*(MATRIX).*");
+        Question question38 = new Question(R.drawable.mep27, ".*(JE)( )*(SUIS)( )*(UNE)( )*(LEGENDE).*");
+        Question question39 = new Question(R.drawable.mep30, ".*(SCREAM).*");
+        Question question40 = new Question(R.drawable.mep10, ".*(POKEMON).*");
 
         List<Question> questCat1 = new ArrayList<>();
         List<Question> questCat2 = new ArrayList<>();
