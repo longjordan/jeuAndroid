@@ -31,14 +31,8 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
 
     private QuestionBank questions;
     private int categorieActuelle;
-    private ImageButton q1;
-    private ImageButton q2;
-    private ImageButton q3;
-    private ImageButton q4;
-    private ImageButton q5;
-    private ImageButton q6;
-    private ImageButton q7;
-    private ImageButton q8;
+    private ImageButton q1,q2,q3,q4,q5,q6,q7,q8;
+
     private List<ImageButton> boutons;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -100,45 +94,6 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
             b.setScaleType(ImageView.ScaleType.FIT_CENTER);
         }
 
-        /*q1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menu = new Intent(MenuQuestionActivity.this, QuestionActivity.class);
-                menu.putExtra("categorie", categorieActuelle);
-                menu.putExtra("numQuestion", 1);
-                startActivity(menu);
-            }
-        });
-
-        q2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menu = new Intent(MenuQuestionActivity.this, QuestionActivity.class);
-                menu.putExtra("categorie", categorieActuelle);
-                menu.putExtra("numQuestion", 2);
-                startActivity(menu);
-            }
-        });*/
-
-        /*q3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menu = new Intent(MenuQuestionActivity.this, QuestionActivity.class);
-                menu.putExtra("categorie", categorieActuelle);
-                menu.putExtra("numQuestion", 3);
-                startActivity(menu);
-            }
-        });
-
-        q4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menu = new Intent(MenuQuestionActivity.this, QuestionActivity.class);
-                menu.putExtra("categorie", categorieActuelle);
-                menu.putExtra("numQuestion", 4);
-                startActivity(menu);
-            }
-        });*/
     }
 
     //Methode qui génére suivant la catégorie les questions pour les images choisi.
@@ -169,7 +124,7 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         Question question17 = new Question(R.drawable.mep4, ".*(AVATAR).*");
         Question question18 = new Question(R.drawable.mep13, ".*(LE)( )*(HOBBIT).*");
         Question question19 = new Question(R.drawable.mep19, ".*(INDIANA)( )*(JONES).*");
-        Question question20 = new Question(R.drawable.mep24, "le silence des agneaux");
+        Question question20 = new Question(R.drawable.mep24, ".*(LE)( )* (SILENCE)( )*(DES)( )*(AGNEAUX).*");
         Question question21 = new Question(R.drawable.mep35, ".*(WATCHMEN).*");
         Question question22 = new Question(R.drawable.mep37, ".*(GODZILLA).*");
         Question question23 = new Question(R.drawable.mep43, ".*(ROX)( )*(ET)( )*(ROUKY).*");
@@ -226,7 +181,8 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         for(int i = 0; i < questions.getQuestions().size(); i++){
             if(questions.getQuestionScore(questions.getQuestions().get(i)) == 1){
                 ImageButton b = boutons.get(i);
-                b.getBackground().setColorFilter(Color.rgb(76,175,80), PorterDuff.Mode.MULTIPLY);
+                b.setBackgroundColor(Color.rgb(76,175,80));
+                //b.getBackground().setColorFilter(Color.rgb(76,175,80), PorterDuff.Mode.MULTIPLY);
             }
         }
     }

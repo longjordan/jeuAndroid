@@ -52,20 +52,24 @@
                             <ImageButton
                                 android:id="@+id/q1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="250dp"
+                                android:layout_height="220dp"
                                 android:layout_margin="3dp"
                                 android:layout_weight="1"
                                 android:background="@android:color/transparent"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
                             <ImageButton
                                 android:id="@+id/q2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="250dp"
+                                android:layout_height="220dp"
                                 android:layout_margin="3dp"
                                 android:layout_weight="1"
                                 android:background="@android:color/transparent"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
@@ -79,20 +83,24 @@
                             <ImageButton
                                 android:id="@+id/q3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="250dp"
+                                android:layout_height="220dp"
                                 android:layout_margin="3dp"
                                 android:layout_weight="1"
                                 android:background="@android:color/transparent"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
                             <ImageButton
                                 android:id="@+id/q4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="250dp"
+                                android:layout_height="220dp"
                                 android:layout_margin="3dp"
                                 android:layout_weight="1"
                                 android:background="@android:color/transparent"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
                         </LinearLayout>
@@ -105,20 +113,25 @@
                             <ImageButton
                                 android:id="@+id/q5"
                                 android:layout_width="wrap_content"
-                                android:layout_height="250dp"
+                                android:layout_height="220dp"
                                 android:layout_margin="3dp"
                                 android:layout_weight="1"
                                 android:background="@android:color/transparent"
+                                android:padding="4dp"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
                             <ImageButton
                                 android:id="@+id/q6"
                                 android:layout_width="wrap_content"
-                                android:layout_height="250dp"
+                                android:layout_height="220dp"
                                 android:layout_margin="3dp"
                                 android:layout_weight="1"
                                 android:background="@android:color/transparent"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
                         </LinearLayout>
@@ -131,18 +144,24 @@
                             <ImageButton
                                 android:id="@+id/q7"
                                 android:layout_width="wrap_content"
-                                android:layout_height="250dp"
+                                android:layout_height="220dp"
+                                android:layout_margin="3dp"
                                 android:layout_weight="1"
                                 android:background="@android:color/transparent"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
                             <ImageButton
                                 android:id="@+id/q8"
                                 android:layout_width="wrap_content"
-                                android:layout_height="250dp"
+                                android:layout_height="220dp"
+                                android:layout_margin="3dp"
                                 android:layout_weight="1"
                                 android:background="@android:color/transparent"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
                                 android:scaleType="fitCenter"
                                 tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
                         </LinearLayout>
