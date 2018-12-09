@@ -36,10 +36,11 @@
             <Button
                 android:id="@+id/quitter"
                 android:layout_width="fill_parent"
-                android:background="@android:color/transparent"
                 android:layout_height="90dp"
                 android:layout_alignParentBottom="true"
-                android:text="Quitter"></Button>
+                android:background="@android:color/transparent"
+                android:text="Quitter"
+                android:textColor="@android:color/background_light"></Button>
 
         </RelativeLayout>
 

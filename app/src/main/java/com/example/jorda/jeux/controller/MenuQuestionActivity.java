@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ScaleDrawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,7 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
     private QuestionBank questions;
     private int categorieActuelle;
     private ImageButton q1,q2,q3,q4,q5,q6,q7,q8;
+    private ConstraintLayout layout;
 
     private List<ImageButton> boutons;
 
@@ -43,6 +45,21 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
 
         QuestionBank.setObservers(this);
         generateQuestions();
+
+        layout = findViewById(R.id.layout);
+
+        if(categorieActuelle == R.id.cat1) {
+            layout.setBackgroundColor(Color.rgb(183, 251, 241));
+        } else if (categorieActuelle == R.id.cat2) {
+            layout.setBackgroundColor(Color.rgb(253, 143, 142));
+        } else if (categorieActuelle == R.id.cat3) {
+            layout.setBackgroundColor(Color.rgb(251, 241, 160));
+        } else if (categorieActuelle == R.id.cat4) {
+            layout.setBackgroundColor(Color.rgb(253, 182, 130));
+        } else if (categorieActuelle == R.id.cat5) {
+            layout.setBackgroundColor(Color.rgb(224, 166, 253  ));
+        }
+
 
         boutons = new ArrayList<>();
 
@@ -81,6 +98,8 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
             );
         }
 
+
+
         for(int i = 0; i < questions.getQuestions().size(); i++){
             ImageButton b = boutons.get(i);
             Drawable affiche = getResources().getDrawable(questions.getQuestions().get(i).getImage());
@@ -93,6 +112,8 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
             b.setImageBitmap(bitmap);
             b.setScaleType(ImageView.ScaleType.FIT_CENTER);
         }
+
+
 
     }
 

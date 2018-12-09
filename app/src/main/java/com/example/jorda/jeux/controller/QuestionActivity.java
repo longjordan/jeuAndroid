@@ -15,6 +15,7 @@ import com.example.jorda.jeux.model.Question;
 import com.example.jorda.jeux.model.QuestionBank;
 import com.example.jorda.jeux.R;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -64,6 +65,13 @@ public class QuestionActivity extends AppCompatActivity {
                 //PDS verification avec une regex plutot qu avec un seul choix possible
                 if(Pattern.matches(questionActuelle.getRegex(),reponse.getText().toString().toUpperCase())){
                     questions.ajoutPoint(questionActuelle);
+                    try {
+                        EtatJeu.sauvegarderJeu(getApplicationContext(), "savedGame");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     finish();
                 }
                 else{

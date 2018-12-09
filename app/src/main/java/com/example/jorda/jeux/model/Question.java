@@ -2,8 +2,9 @@ package com.example.jorda.jeux.model;
 
 import android.content.IntentFilter;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-public class Question {
+public class Question implements Serializable {
 
     private int image;
     private String regex ;

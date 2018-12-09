@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jorda.jeux.model.EtatJeu;
@@ -22,6 +23,7 @@ public class MenuActivity extends AppCompatActivity implements Observer {
     private Button cat4;
     private Button cat5;
     private int scoreTotal = 0;
+    private TextView scores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,8 @@ public class MenuActivity extends AppCompatActivity implements Observer {
         setContentView(R.layout.activity_menu);
 
         QuestionBank.setObservers(this);
+
+        update(null, null);
 
         cat1 = findViewById(R.id.cat1);
         cat2 = findViewById(R.id.cat2);
@@ -48,7 +52,7 @@ public class MenuActivity extends AppCompatActivity implements Observer {
         cat2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(scoreTotal >= 4) {
+                if(scoreTotal >= 0) {
                     Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
                     menu.putExtra("categorie", cat2.getId());
                     startActivity(menu);
@@ -67,7 +71,7 @@ public class MenuActivity extends AppCompatActivity implements Observer {
                     menu.putExtra("categorie", cat3.getId());
                     startActivity(menu);
                 }else{
-                    int reste = 4-scoreTotal;
+                    int reste = 8-scoreTotal;
                     Toast.makeText(MenuActivity.this, "Il reste "+reste+" affiche(s) à trouver.", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -81,7 +85,7 @@ public class MenuActivity extends AppCompatActivity implements Observer {
                     menu.putExtra("categorie", cat4.getId());
                     startActivity(menu);
                 }else{
-                    int reste = 4-scoreTotal;
+                    int reste = 12-scoreTotal;
                     Toast.makeText(MenuActivity.this, "Il reste "+reste+" affiche(s) à trouver.", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -95,7 +99,7 @@ public class MenuActivity extends AppCompatActivity implements Observer {
                     menu.putExtra("categorie", cat5.getId());
                     startActivity(menu);
                 }else{
-                    int reste = 4-scoreTotal;
+                    int reste = 16-scoreTotal;
                     Toast.makeText(MenuActivity.this, "Il reste "+reste+" affiche(s) à trouver.", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -139,6 +143,7 @@ public class MenuActivity extends AppCompatActivity implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        scoreTotal = QuestionBank.getTotalScore();
+        scores = findViewById(R.id.scores);
+        scores.setText(Integer.toString(QuestionBank.getTotalScore())+" affiche(s) trouvé(s)");
     }
 }

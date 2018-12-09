@@ -3,6 +3,7 @@ package com.example.jorda.jeux.model;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -10,12 +11,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
-public class QuestionBank extends Observable {
+public class QuestionBank extends Observable implements Serializable {
 
-    private Map<Question, Integer> score;
+    private ConcurrentMap<Question, Integer> score;
     private Categories categorie;
     private List<Question> questions;
+
     private static Map<Categories, QuestionBank> instances;
     private static List<Observer> observers;
 
@@ -33,15 +37,12 @@ public class QuestionBank extends Observable {
 
     private QuestionBank(List<Question> questions, Categories categorie) {
 
-        this.score = new HashMap<>();
+        this.score = new ConcurrentHashMap<>();
         for(Question q : questions){
             this.score.put(q,0);
         }
         this.categorie = categorie;
         this.questions = questions;
-        for(Observer o : observers){
-            addObserver(o);
-        }
     }
 
     public static void setObservers (Observer observer){
@@ -52,6 +53,11 @@ public class QuestionBank extends Observable {
     }
 
     public void ajoutPoint(Question question){
+        // Contrôle des observateurs
+        for(Observer o : observers){
+            addObserver(o);
+        }
+
         this.score.put(question,1);
         setChanged();
         notifyObservers();
@@ -76,6 +82,11 @@ public class QuestionBank extends Observable {
     }
 
     public static int getTotalScore(){
+
+        if(instances == null) {
+            return 0;
+        }
+
         Iterator iterator = instances.entrySet().iterator();
         int somme = 0;
         while(iterator.hasNext()){
@@ -85,6 +96,14 @@ public class QuestionBank extends Observable {
         }
         return somme;
 
+    }
+
+    public static Map<Categories, QuestionBank> getInstances() {
+        return instances;
+    }
+
+    public static void setInstances(Map<Categories, QuestionBank> instances) {
+        QuestionBank.instances = instances;
     }
 
 }

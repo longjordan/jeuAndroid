@@ -1,6 +1,8 @@
 package com.example.jorda.jeux.model;
 
-public enum Categories {
+import java.io.Serializable;
+
+public enum Categories implements Serializable {
 
     CATEGORIE1, CATEGORIE2, CATEGORIE3, CATEGORIE4, CATEGORIE5
 }
