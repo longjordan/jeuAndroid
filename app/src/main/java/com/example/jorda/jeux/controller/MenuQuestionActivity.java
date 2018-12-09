@@ -136,9 +136,9 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         Question question9 = new Question(R.drawable.mep48, ".*(DRAGONS).*");
         Question question10 = new Question(R.drawable.mep2, ".*(SHERLOCK)( )*(HOLMES).*");
         Question question11 = new Question(R.drawable.mep15, ".*(STAR)( )*(WARS).*");
-        Question question12 = new Question(R.drawable.mep16, "le cinquième élément");
+        Question question12 = new Question(R.drawable.mep16, ".*(CINQUIEME)( )*(ELEMENT).*");
         Question question13 = new Question(R.drawable.mep17, ".*(TITANIC).*");
-        Question question14 = new Question(R.drawable.mep18, "X-men");
+        Question question14 = new Question(R.drawable.mep18, ".*(X)( )*(MEN).*");
         Question question15 = new Question(R.drawable.mep22, ".*(JURASSIC)( )*(PARK).*");
         Question question16 = new Question(R.drawable.mep11, ".*(PRINCESSE)( )*(MONONOKE).*");
 
@@ -153,10 +153,10 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
 
         Question question25 = new Question(R.drawable.mep8, ".*(ZELDA).*");
         Question question26 = new Question(R.drawable.mep6, ".*(SPLIT).*");
-        Question question27 = new Question(R.drawable.mep50, "Wall-E");
-        Question question28 = new Question(R.drawable.mep51, "le monde de Ralph");
+        Question question27 = new Question(R.drawable.mep50, ".*(WALL)( )*(E).*");
+        Question question28 = new Question(R.drawable.mep51, ".*(LE)( )* (MONDE)( )*(DE)( )*(RALPH).*");
         Question question29 = new Question(R.drawable.mep32, ".*(LA)( )*(LIGNE)( )*(VERTE).*");
-        Question question30 = new Question(R.drawable.mep56, "Pac-Man");
+        Question question30 = new Question(R.drawable.mep56, ".*(PAC)( )*(MAN).*");
         Question question31 = new Question(R.drawable.mep57, ".*(GAME)( )*(OF)( )*(THRONES).*");
         Question question32 = new Question(R.drawable.mep34, ".*(INCEPTION).*");
 
