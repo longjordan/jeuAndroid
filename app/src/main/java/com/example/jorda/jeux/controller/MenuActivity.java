@@ -40,19 +40,15 @@ public class MenuActivity extends AppCompatActivity implements Observer {
         cat4 = findViewById(R.id.cat4);
         cat5 = findViewById(R.id.cat5);
 
-        cat1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        cat1.setOnClickListener((View v) -> {
                 Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
                 menu.putExtra("categorie", cat1.getId());
                 startActivity(menu);
             }
-        });
+        );
 
-        cat2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(scoreTotal >= 0) {
+        cat2.setOnClickListener((View v) -> {
+                if(scoreTotal >= 4) {
                     Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
                     menu.putExtra("categorie", cat2.getId());
                     startActivity(menu);
@@ -61,12 +57,10 @@ public class MenuActivity extends AppCompatActivity implements Observer {
                     Toast.makeText(MenuActivity.this, "Il reste "+reste+" affiche(s) à trouver.", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        );
 
-        cat3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(scoreTotal >= 0) {
+        cat3.setOnClickListener((View v) -> {
+                if(scoreTotal >= 4) {
                     Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
                     menu.putExtra("categorie", cat3.getId());
                     startActivity(menu);
@@ -75,12 +69,10 @@ public class MenuActivity extends AppCompatActivity implements Observer {
                     Toast.makeText(MenuActivity.this, "Il reste "+reste+" affiche(s) à trouver.", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        );
 
-        cat4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(scoreTotal >= 0) {
+        cat4.setOnClickListener((View v) -> {
+                if(scoreTotal >= 4) {
                     Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
                     menu.putExtra("categorie", cat4.getId());
                     startActivity(menu);
@@ -89,12 +81,10 @@ public class MenuActivity extends AppCompatActivity implements Observer {
                     Toast.makeText(MenuActivity.this, "Il reste "+reste+" affiche(s) à trouver.", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        );
 
-        cat5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(scoreTotal >= 0) {
+        cat5.setOnClickListener((View v) -> {
+                if(scoreTotal >= 4) {
                     Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
                     menu.putExtra("categorie", cat5.getId());
                     startActivity(menu);
@@ -103,7 +93,7 @@ public class MenuActivity extends AppCompatActivity implements Observer {
                     Toast.makeText(MenuActivity.this, "Il reste "+reste+" affiche(s) à trouver.", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        );
     }
 
     @Override
@@ -143,7 +133,13 @@ public class MenuActivity extends AppCompatActivity implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
+        scoreTotal = QuestionBank.getTotalScore();
         scores = findViewById(R.id.scores);
-        scores.setText(Integer.toString(QuestionBank.getTotalScore())+" affiche(s) trouvé(s)");
+        if(scoreTotal>1) {
+            scores.setText(scoreTotal + " affiches trouvées");
+        }
+        else {
+            scores.setText(scoreTotal + " affiche trouvée");
+        }
     }
 }

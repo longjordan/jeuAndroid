@@ -93,7 +93,7 @@
         android:layout_weight="1"
         android:background="@color/colorPrimary"
         android:gravity="center"
-        android:text="0 affiche(s) trouvé(s)"
+        android:text="0 affiche trouvée"
         android:textColor="@android:color/background_light"
         android:textSize="24sp" />
 

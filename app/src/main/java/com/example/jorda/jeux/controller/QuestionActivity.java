@@ -27,8 +27,7 @@ public class QuestionActivity extends AppCompatActivity {
     private Question questionActuelle;
     private Button validation;
     private EditText reponse;
-    private int categorieActuelle;
-    private int numQuestionActuelle;
+    private int categorieActuelle,numQuestionActuelle;
     private QuestionBank questions;
 
 
