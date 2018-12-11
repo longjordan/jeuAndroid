@@ -21,12 +21,12 @@
                     android:layout_height="150dp"
                     android:layout_weight="1"
                     android:background="@android:color/holo_blue_light"
+                    android:gravity="left|center"
                     android:lineSpacingExtra="12sp"
                     android:text="  #1"
-                    android:gravity="left|center"
                     android:textAllCaps="true"
                     android:textColor="@android:color/white"
-                    android:textSize="36sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     android:typeface="monospace" />
 
@@ -39,7 +39,7 @@
                     android:gravity="right|center"
                     android:text="#2    "
                     android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="36sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     android:typeface="monospace" />
 
@@ -52,7 +52,7 @@
                     android:gravity="left|center"
                     android:text="  #3"
                     android:textColor="@android:color/holo_red_light"
-                    android:textSize="36sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     android:typeface="monospace" />
 
@@ -65,20 +65,20 @@
                     android:gravity="right|center"
                     android:text="#4    "
                     android:textColor="@color/colorPrimary"
-                    android:textSize="36sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     android:typeface="monospace" />
 
                 <Button
                     android:id="@+id/cat5"
-                    android:layout_width="match_parent"
+                    android:layout_width="fill_parent"
                     android:layout_height="150dp"
                     android:layout_weight="1"
                     android:background="@android:color/holo_purple"
                     android:gravity="left|center"
                     android:text="  #5"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="36sp"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     android:typeface="monospace" />
 
@@ -95,6 +95,6 @@
         android:gravity="center"
         android:text="0 affiche trouvée"
         android:textColor="@android:color/background_light"
-        android:textSize="24sp" />
+        android:textSize="25sp" />
 
 </android.support.constraint.ConstraintLayout>

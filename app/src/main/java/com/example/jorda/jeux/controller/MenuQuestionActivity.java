@@ -161,7 +161,7 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         Question question32 = new Question(R.drawable.mep34, ".*(INCEPTION).*");
 
         Question question33 = new Question(R.drawable.mep58, ".*(DR)( )*(HOUSE).*");
-        Question question34 = new Question(R.drawable.mep53, ".*(ROI)( )*(LYON).*");
+        Question question34 = new Question(R.drawable.mep53, ".*(ROI)( )*(LION).*");
         Question question35 = new Question(R.drawable.mep54, ".*(SPIRIT).*");
         Question question36 = new Question(R.drawable.mep39, ".*(PIRATE)( )*(DES)( )*(CARAIBES).*");
         Question question37 = new Question(R.drawable.mep20, ".*(MATRIX).*");
