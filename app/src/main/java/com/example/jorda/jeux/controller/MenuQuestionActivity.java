@@ -4,21 +4,18 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ScaleDrawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.jorda.jeux.R;
-import com.example.jorda.jeux.model.Categories;
+import com.example.jorda.jeux.model.Categorie;
 import com.example.jorda.jeux.model.Question;
 import com.example.jorda.jeux.model.QuestionBank;
 
@@ -184,15 +181,15 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
 
 
         if(categorieActuelle == R.id.cat1) {
-            questions = QuestionBank.getinstance(questCat1, Categories.CATEGORIE1);
+            questions = QuestionBank.getinstance(questCat1, Categorie.CATEGORIE1);
         } else if (categorieActuelle == R.id.cat2) {
-            questions = QuestionBank.getinstance(questCat2, Categories.CATEGORIE2);
+            questions = QuestionBank.getinstance(questCat2, Categorie.CATEGORIE2);
         } else if (categorieActuelle == R.id.cat3) {
-            questions = QuestionBank.getinstance(questCat3, Categories.CATEGORIE3);
+            questions = QuestionBank.getinstance(questCat3, Categorie.CATEGORIE3);
         } else if (categorieActuelle == R.id.cat4) {
-            questions = QuestionBank.getinstance(questCat4, Categories.CATEGORIE4);
+            questions = QuestionBank.getinstance(questCat4, Categorie.CATEGORIE4);
         } else if (categorieActuelle == R.id.cat5) {
-            questions = QuestionBank.getinstance(questCat5, Categories.CATEGORIE5);
+            questions = QuestionBank.getinstance(questCat5, Categorie.CATEGORIE5);
         }
     }
 

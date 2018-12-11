@@ -14,7 +14,7 @@ public class EtatJeu {
     public static void chargerJeu(Context context, String fileName) throws IOException, ClassNotFoundException {
         FileInputStream fis = context.openFileInput(fileName);
         ObjectInputStream is = new ObjectInputStream(fis);
-        Map<Categories, QuestionBank> instances = (Map<Categories, QuestionBank>) is.readObject();
+        Map<Categorie, QuestionBank> instances = (Map<Categorie, QuestionBank>) is.readObject();
         QuestionBank.setInstances(instances);
         is.close();
         fis.close();

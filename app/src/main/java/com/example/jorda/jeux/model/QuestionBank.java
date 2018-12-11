@@ -1,8 +1,5 @@
 package com.example.jorda.jeux.model;
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,13 +14,13 @@ import java.util.concurrent.ConcurrentMap;
 public class QuestionBank extends Observable implements Serializable {
 
     private ConcurrentMap<Question, Integer> score;
-    private Categories categorie;
+    private Categorie categorie;
     private List<Question> questions;
 
-    private static Map<Categories, QuestionBank> instances;
+    private static Map<Categorie, QuestionBank> instances;
     private static List<Observer> observers;
 
-    public static QuestionBank getinstance(List<Question> questions, Categories categorie){
+    public static QuestionBank getinstance(List<Question> questions, Categorie categorie){
         if(instances == null){
             instances = new HashMap<>();
         }
@@ -35,7 +32,7 @@ public class QuestionBank extends Observable implements Serializable {
         return instance;
     }
 
-    private QuestionBank(List<Question> questions, Categories categorie) {
+    private QuestionBank(List<Question> questions, Categorie categorie) {
 
         this.score = new ConcurrentHashMap<>();
         for(Question q : questions){
@@ -65,7 +62,7 @@ public class QuestionBank extends Observable implements Serializable {
 
     public int getQuestionScore(Question question){ return score.get(question); }
 
-    public Categories getCategorie() {
+    public Categorie getCategorie() {
         return categorie;
     }
 
@@ -98,11 +95,11 @@ public class QuestionBank extends Observable implements Serializable {
 
     }
 
-    public static Map<Categories, QuestionBank> getInstances() {
+    public static Map<Categorie, QuestionBank> getInstances() {
         return instances;
     }
 
-    public static void setInstances(Map<Categories, QuestionBank> instances) {
+    public static void setInstances(Map<Categorie, QuestionBank> instances) {
         QuestionBank.instances = instances;
     }
 

@@ -9,15 +9,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.jorda.jeux.model.Categories;
+import com.example.jorda.jeux.model.Categorie;
 import com.example.jorda.jeux.model.EtatJeu;
 import com.example.jorda.jeux.model.Question;
 import com.example.jorda.jeux.model.QuestionBank;
 import com.example.jorda.jeux.R;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
 
 public class QuestionActivity extends AppCompatActivity {
@@ -40,15 +38,15 @@ public class QuestionActivity extends AppCompatActivity {
         numQuestionActuelle = getIntent().getIntExtra("numQuestion",0);
 
         if(categorieActuelle == R.id.cat1) {
-            questions = QuestionBank.getinstance(null, Categories.CATEGORIE1);
+            questions = QuestionBank.getinstance(null, Categorie.CATEGORIE1);
         } else if (categorieActuelle == R.id.cat2) {
-            questions = QuestionBank.getinstance(null, Categories.CATEGORIE2);
+            questions = QuestionBank.getinstance(null, Categorie.CATEGORIE2);
         } else if (categorieActuelle == R.id.cat3) {
-            questions = QuestionBank.getinstance(null, Categories.CATEGORIE3);
+            questions = QuestionBank.getinstance(null, Categorie.CATEGORIE3);
         } else if (categorieActuelle == R.id.cat4) {
-            questions = QuestionBank.getinstance(null, Categories.CATEGORIE4);
+            questions = QuestionBank.getinstance(null, Categorie.CATEGORIE4);
         } else if (categorieActuelle == R.id.cat5) {
-            questions = QuestionBank.getinstance(null, Categories.CATEGORIE5);
+            questions = QuestionBank.getinstance(null, Categorie.CATEGORIE5);
         }
 
         questionActuelle = questions.getQuestions().get(numQuestionActuelle-1);
