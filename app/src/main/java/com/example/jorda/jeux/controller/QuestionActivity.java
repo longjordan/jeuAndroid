@@ -59,14 +59,12 @@ public class QuestionActivity extends AppCompatActivity {
         reponse = findViewById(R.id.reponse);
 
         validation.setOnClickListener( (View v ) ->{
-                //PDS verification avec une regex plutot qu avec un seul choix possible
+                //Verification avec le regex pour avoir plusieurs reponses possibles
                 if(Pattern.matches(questionActuelle.getRegex(),reponse.getText().toString().toUpperCase())){
                     questions.ajoutPoint(questionActuelle);
                     try {
                         EtatJeu.sauvegarderJeu(getApplicationContext(), "savedGame");
                     } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (ClassNotFoundException e) {
                         e.printStackTrace();
                     }
                     finish();

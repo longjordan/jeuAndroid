@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
@@ -28,7 +27,7 @@ import java.util.Observer;
 public class MenuQuestionActivity extends AppCompatActivity implements Observer {
 
     private QuestionBank questions;
-    private int categorieActuelle;
+    private int categorieActuelle, hauteur;
     private ImageButton q1,q2,q3,q4,q5,q6,q7,q8;
     private ConstraintLayout layout;
 
@@ -78,13 +77,12 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
         boutons.add(q7);
         boutons.add(q8);
 
-        // A quoi sert cette méthode ?
         update(null,null);
 
-        //PDS on boucle sur tout les boutons de la liste et on les set avec la bonne question.
+        //On boucle sur tout les boutons de la liste et on les set avec la bonne question.
 
         for (int i=0; i<boutons.size();i++){
-            //j est une variable recrée à chaque tour de boucle car il nous faut une variable final
+            //Il faut une variable final pour utiliser des methodes lambda
             final int j=i;
             boutons.get(i).setOnClickListener((View v) -> {
                     Intent menu = new Intent(MenuQuestionActivity.this, QuestionActivity.class);
@@ -99,11 +97,9 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
 
         for(int i = 0; i < questions.getQuestions().size(); i++){
             ImageButton b = boutons.get(i);
-            Drawable affiche = getResources().getDrawable(questions.getQuestions().get(i).getImage());
-
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(),questions.getQuestions().get(i).getImage());
             //pour faire l'image en petit on fait un ratio entre hauteur et largeur qui est de 0.707 (la hauteur est 70% plus grande que la largeur)
-            int hauteur = 650;
+            hauteur = 650;
             bitmap = Bitmap.createScaledBitmap(bitmap,(int)(hauteur*0.707),hauteur,true);
 
             b.setImageBitmap(bitmap);
@@ -114,12 +110,9 @@ public class MenuQuestionActivity extends AppCompatActivity implements Observer 
 
     }
 
-    //Methode qui génére suivant la catégorie les questions pour les images choisi.
+    //Suivant la catégorie les questions sont générés
     private void generateQuestions() {
         categorieActuelle = getIntent().getIntExtra("categorie",0);
-
-        //PDS voir si on peut pas faire une méthode avec une liste et pour chaque tour de boucle on met l'élément suivant
-        //PDS mis en place des regexs
 
         Question question1 = new Question(R.drawable.mep3, ".*(DEATH)( )*(NOTE).*");
         Question question2 = new Question(R.drawable.mep14, ".*(OLIVE)( )*(ET)( )*(TOM).*");

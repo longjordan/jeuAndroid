@@ -20,7 +20,7 @@ public class EtatJeu {
         fis.close();
     }
 
-    public static void sauvegarderJeu(Context context,String fileName) throws IOException, ClassNotFoundException {
+    public static void sauvegarderJeu(Context context,String fileName) throws IOException {
         FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
         ObjectOutputStream os = new ObjectOutputStream(fos);
         os.writeObject(QuestionBank.getInstances());

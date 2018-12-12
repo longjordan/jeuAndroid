@@ -5,14 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.jorda.jeux.R;
 import com.example.jorda.jeux.model.EtatJeu;
-import com.example.jorda.jeux.model.QuestionBank;
 
 import java.io.IOException;
-import java.util.Observable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,20 +32,13 @@ public class MainActivity extends AppCompatActivity {
         mPlayButton = findViewById(R.id.jouer);
         quitter = findViewById(R.id.quitter);
 
-        mPlayButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        mPlayButton.setOnClickListener((View v) -> {
                 Intent menu = new Intent(MainActivity.this, MenuActivity.class);
                 startActivity(menu);
             }
-        });
+        );
 
-        quitter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        quitter.setOnClickListener((View v ) -> finish());
     }
 
     @Override

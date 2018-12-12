@@ -17,11 +17,7 @@ import java.util.Observer;
 
 public class MenuActivity extends AppCompatActivity implements Observer {
 
-    private Button cat1;
-    private Button cat2;
-    private Button cat3;
-    private Button cat4;
-    private Button cat5;
+    private Button cat1,cat2,cat3,cat4,cat5;
     private int scoreTotal = 0;
     private TextView scores;
 
@@ -60,7 +56,7 @@ public class MenuActivity extends AppCompatActivity implements Observer {
         );
 
         cat3.setOnClickListener((View v) -> {
-                if(scoreTotal >= 4) {
+                if(scoreTotal >= 8) {
                     Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
                     menu.putExtra("categorie", cat3.getId());
                     startActivity(menu);
@@ -72,7 +68,7 @@ public class MenuActivity extends AppCompatActivity implements Observer {
         );
 
         cat4.setOnClickListener((View v) -> {
-                if(scoreTotal >= 4) {
+                if(scoreTotal >= 12) {
                     Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
                     menu.putExtra("categorie", cat4.getId());
                     startActivity(menu);
@@ -84,7 +80,7 @@ public class MenuActivity extends AppCompatActivity implements Observer {
         );
 
         cat5.setOnClickListener((View v) -> {
-                if(scoreTotal >= 4) {
+                if(scoreTotal >= 16) {
                     Intent menu = new Intent(MenuActivity.this, MenuQuestionActivity.class);
                     menu.putExtra("categorie", cat5.getId());
                     startActivity(menu);
